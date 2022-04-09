@@ -20,6 +20,7 @@
   <PropertyGroup Condition="'$(AGENT_OS)' != 'Windows_NT' and '$(RunFromPerfRepo)' == 'false'">
     <BaseDirectory>$HELIX_CORRELATION_PAYLOAD</BaseDirectory>
     <PerformanceDirectory>$HELIX_WORKITEM_ROOT/performance</PerformanceDirectory>
+    <HelixPreCommands>$(HelixPreCommands);cp -R $(BaseDirectory)/performance $(PerformanceDirectory)</HelixPreCommands>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(AGENT_OS)' != 'Windows_NT' and '$(RunFromPerfRepo)' == 'true'">
